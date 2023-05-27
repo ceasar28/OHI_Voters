@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>OHI | Register</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+        content="Report Login Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <!-- //Meta tag Keywords -->
+    <link href="//fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <!--//Style-CSS -->
+
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="all">
+
+</head>
+
+<body>
+
+    <!-- form section start -->
+    <section class="w3l-hotair-form">
+        <h1><img src="images/logo1.jpg" style="width:200px;border-radius: 50%;" /></h1>
+        <div class="container">
+            <!-- /form -->
+            <div class="workinghny-form-grid">
+                <div class="main-hotair">
+                    <div class="content-wthree" style="-webkit-flex-basis: 100%; flex-basis: 100%;">
+                        <h2>Register</h2>
+                        <form enctype="multipart/form-data" id="regForm">
+                            <label>Passport Photo</label>
+                            <input type="file" class="text" name="passportImage" id="passportImage" required>
+                            <br>
+                            <label>Last Name</label>
+                            <input type="text" class="text" name="lName" required>
+                            <br>
+                            <label>First Name</label>
+                            <input type="text" class="text" name="fName" required>
+                            <br>
+
+                            <label>Middle Name</label>
+                            <input type="text" class="text" name="mName" required>
+                            <br>
+
+                            <label>Phone number</label>
+                            <input type="text" class="text" name="phone" required=>
+                            <br>
+
+                            <label>Email</label>
+                            <span id="invalidEmail" style="color: rgb(248, 9, 9);font-size: small;"></span>
+                            <input type="email" class="text" name="email" id="email" required
+                                onkeyup="searchUsername(this); validateEmail(this);" />
+                            <span id="userExist" style="color: rgb(248, 9, 9);font-size: small;"></span>
+                            <br>
+
+                            <label>Date of Birth</label>
+                            <input type="date" class="text" name="dob" required>
+                            <br>
+
+                            <label>Gender</label>
+                            <select id="gender" name="gender" size="1" class="regselect">
+                                <option value="" disabled selected hidden>
+                                    --Select--
+                                </option>
+                                <option value="male">male</option>
+                                <option value="female">female</option>
+                            </select required>
+                            <br>
+
+                            <label>Marital Status</label>
+                            <select id="mStatus" name="mStatus" size="1" class="regselect">
+                                <option value="" disabled selected hidden>
+                                    --Select--
+                                </option>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                            </select required>
+                            <br>
+
+
+                            <label>Last Name</label>
+                            <input type="text" class="text" name="text">
+                            <br>
+
+                            <label>VIN</label>
+                            <input type="text" class="vin" name="vin" required>
+
+                            <label>State of Registration</label>
+                            <input type="text" class="text" name="state" required="">
+                            <br>
+
+                            <label>Maidian Name</label>
+                            <input type="text" class="text" name="maidenName" required>
+                            <br>
+
+                            <label>Was registration done before marriage?</label>
+
+                            <select id="regBefore" name="regBefore" size="1" class="regselect">
+                                <option value="" disabled selected hidden>
+                                    --Select--
+                                </option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select required>
+                            <br>
+
+                            <label>If someone referred you, enter their email here or ignore</label>
+                            <input type="text" class="text" name="referralEmail">
+                            <br>
+
+                            <label>Password</label>
+                            <span id="invalidpass" style="color: rgb(248, 9, 9);font-size: small;"></span>
+                            <input type="password" class="text" name="password" id="password" required
+                                onkeyup="validatepassword(this)" />
+                            <br>
+
+
+
+                            <button class="btn" type="submit" id="submitBtn">Register</button>
+                        </form>
+
+                        <p class="account">Have an account? <a href="/">Login</a></p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- //form -->
+        </div>
+        <!-- copyright-->
+        <div class="copyright text-center">
+            <p class="copy-footer-29">Ohi.com.ng © 2022 - All rights reserved </p>
+        </div>
+        <!-- //copyright-->
+    </section>
+    <!-- //form section start -->
+    <!-- fetch API -->
+    <script src="js/reg-fetchAPI.js"></script>
+    <!-- email and password validation -->
+    <script src="js/validation.js"></script>
+    <!-- sweet alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>OHI | My Voters Details</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+        content="Report Login Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <!-- //Meta tag Keywords -->
+    <link href="//fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <!--//Style-CSS -->
+
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="all">
+
+    <style type="text/css">
+        p {
+            color: #111;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- form section start -->
+    <section class="w3l-hotair-form">
+        <h1><img src="images/logo1.jpg" style="width:200px;border-radius: 50%;" /></h1>
+        <div class="container">
+            <!-- /form -->
+            <div class="workinghny-form-grid">
+                <div class="main-hotair">
+                    <div class="content-wthree" style="-webkit-flex-basis: 100%; flex-basis: 100%;min-width: 500px;">
+                        <h2>My Voters Details</h2>
+                        <% if(user.validated=="Yes" ){%>
+                            <p><b>MY OHI ID: <%=user.OHI_id %></b></p>
+                            <br>
+                            <%}%>
+                                <% if(user.passportImg==undefined){%>
+                                    <br>
+                                    <center><img src="images/passport.png" width="200" height="200" /></center>
+                                    <br><br>
+                                    <% } else{%>
+                                        <br>
+                                        <center><img src="/public/passportImages/<%=user.passportImg%>" width="200"
+                                                height="200" /></center>
+                                        <br><br>
+                                        <% }%>
+
+
+                                            <form id="logoForm">
+                                                <label>Passport Photo </label>
+                                                <input type="file" class="text" name="passportImage" id="passportImage"
+                                                    required="">
+                                                <button type="submit" class="btn-small"
+                                                    style="width:100px; ">change</button>
+                                                <br>
+                                            </form>
+
+
+                                            <form enctype="multipart/form-data" id="uploadForm">
+                                                <label>Last Name</label>
+                                                <input type="text" id="LastName" class="text" name="lName" required=""
+                                                    placeholder="<%=user.lastName%>">
+                                                <br>
+                                                <label>First Name</label>
+                                                <input type="text" class="text" name="fName" id="fName" required=""
+                                                    placeholder="<%=user.firstName%>">
+                                                <br>
+
+                                                <label>Middle Name</label>
+                                                <input type="text" class="text" name="mName" id="mName" required=""
+                                                    placeholder="<%=user.middleName%>">
+                                                <br>
+
+                                                <label>Phone number</label>
+                                                <input type="text" class="text" name="Phone" id="Phone" required="">
+                                                <br>
+
+                                                <label>Email</label>
+                                                <span id="invalidEmail"
+                                                    style="color: rgb(248, 9, 9);font-size: small;"></span>
+                                                <input type="email" class="text" name="username" id="email" required=""
+                                                    placeholder="<%=user.email%>"
+                                                    onkeyup="searchUsername(this); validateEmail(this);">
+                                                <span id="userExist"
+                                                    style="color: rgb(248, 9, 9);font-size: small;"></span>
+                                                <br>
+
+                                                <label>Date of Birth</label>
+                                                <input type="date" class="text" name="DOB" id="DOB" required="">
+                                                <br>
+
+
+                                                <label>Gender</label>
+
+                                                <select name="gender" id="gender" size="1" class="regselect">
+                                                    <option value="" disabled selected hidden>
+                                                        --Select--
+                                                    </option>
+                                                    <option value="male">male</option>
+                                                    <option value="female">female</option>
+                                                </select required>
+                                                <br>
+
+                                                <label>Marital Status</label>
+
+                                                <select name="mStatus" id="mStatus" size="1" class="regselect">
+                                                    <option value="" disabled selected hidden>
+                                                        --Select--
+                                                    </option>
+                                                    <option value="single">Single</option>
+                                                    <option value="married">Married</option>
+                                                </select required>
+
+                                                <br>
+
+                                                <label>VIN</label>
+                                                <input type="text" id="vin" class="password" name="vin" required="">
+
+                                                <label>State of Registration</label>
+                                                <input type="text" id="stateOfReg" class="text" name="stateOfReg"
+                                                    required="">
+                                                <br>
+
+                                                <label>Maidian Name</label>
+                                                <input type="text" class="text" name="maidenName" id="maidenName"
+                                                    required="">
+                                                <br>
+
+                                                <label>Was registration done before marriage?</label>
+
+
+                                                <select name="regBefore" id="regBefore" size="1" class="regselect">
+                                                    <option value="" disabled selected hidden>
+                                                        <% if(user.validated=='Verified' ){%>
+                                                            <%=user.registeredBeforeMarriage%>
+                                                                <%}else{%>
+                                                                    --Select--
+                                                                    <%}%>
+
+                                                    </option>
+                                                    <option value="Yes">Yes</option>
+                                                    <option value="No">No</option>
+                                                </select required><br>
+                                                <% if(user.validated=='Unverified' ){%>
+                                                    <button class="btn" id="submitBtn" type="submit">Update</button>
+                                                    <% } %>
+
+                                            </form>
+
+
+
+
+
+
+                                            <br><br><br>
+                                            <center><a href="index" style="text-align: center;">- My OHI Page
+                                                    -</a>
+                                            </center>
+                                            <br><br>
+                                            <center><a href="auth/Logout" id="logoutLink" style="text-align: center;">-
+                                                    Click to Logout
+                                                    -</a></center>
+                                            <br>
+                    </div>
+
+                </div>
+            </div>
+            <!-- //form -->
+        </div>
+        <!-- copyright-->
+        <div class="copyright text-center">
+            <p class="copy-footer-29">Ohi.com.ng © 2022 - All rights reserved </p>
+        </div>
+        <!-- //copyright-->
+    </section>
+    <!-- //form section start -->
+
+    <!-- fetch API for logout page -->
+    <script src="js/logout-fetchAPI.js"></script>
+    <!-- email and password validation -->
+    <script src="js/validation.js"></script>
+
+    <script>
+        // to search if a username already exist
+        async function searchUsername(b) {
+            await fetch('username', {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username: b.value })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    let userExist = data.username;
+
+                    if (userExist == "") {
+                        document.getElementById("userExist").innerHTML = "";
+                        if (document.getElementById('invalidEmail').innerHTML == "") {
+                            document.getElementById("submitBtn").disabled = false
+                        } else { document.getElementById("submitBtn").disabled = true }
+                    } else {
+                        document.getElementById("userExist").textContent = userExist;
+                        if (document.getElementById('invalidEmail').innerHTML == "") {
+                            document.getElementById("submitBtn").disabled = true
+                        }
+                    }
+                });
+
+        }
+
+
+
+        const uploadForm = document.getElementById("uploadForm")
+
+        uploadForm.addEventListener('submit', async function (e) {
+            e.preventDefault()
+
+            const lName = document.getElementById("LastName").value;
+            const fName = document.getElementById("fName").value;
+            const mName = document.getElementById("mName").value;
+            const Phone = document.getElementById("Phone").value;
+            const email = document.getElementById("email").value;
+            const DOB = document.getElementById("DOB").value;
+            const gender = document.getElementById("gender").value;
+            const mStatus = document.getElementById("mStatus").value;
+            const stateOfReg = document.getElementById("stateOfReg").value;
+            const maidenName = document.getElementById("maidenName").value;
+            const regBefore = document.getElementById("regBefore").value;
+            const vin = document.getElementById("vin").value;
+
+
+
+
+            await fetch('voters-details', {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    lName: lName,
+                    fName: fName,
+                    mName: mName,
+                    Phone: Phone,
+                    email: email,
+                    DOB: DOB,
+                    gender: gender,
+                    mStatus: mStatus,
+                    stateOfReg: stateOfReg,
+                    maidenName: maidenName,
+                    regBefore: regBefore,
+                    vin: vin,
+                }),
+            })
+                .then(res => res.json())
+                .then(data => {
+                    let updated = data.message;
+                    console.log(updated)
+                    if (updated == "successful") {
+                        swal({
+                            icon: "success",
+                            text: "Voters details Updated",
+                            button: false,
+                        })
+                        setTimeout(() => { location.assign("/voters-details"); }, 900);
+                    } else if (updated == "unsucessful") {
+                        swal({
+                            icon: "error",
+                            text: "there was an error",
+                            button: false,
+                        })
+                        setTimeout(() => { location.assign("/voters-details"); }, 900);
+                    }
+                })
+
+        })
+    </script>
+    <!-- // profile API -->
+    <script src="js/profile-fetchAPI.js"></script>
+    <!-- sweet alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
+</html>

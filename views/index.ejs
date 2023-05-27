@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>OHI | My OHI Page</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+        content="Report Login Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <!-- //Meta tag Keywords -->
+    <link href="//fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <!--//Style-CSS -->
+
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="all">
+
+    <style type="text/css">
+        p {
+            color: #111;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- form section start -->
+    <section class="w3l-hotair-form">
+        <h1><img src="images/logo1.jpg" style="width:200px;border-radius: 50%;" /></h1>
+        <div class="container">
+            <!-- /form -->
+            <div class="workinghny-form-grid">
+                <div class="main-hotair">
+                    <div class="content-wthree" style="-webkit-flex-basis: 100%;min-width: 500px;">
+                        <h2>My OHI Page</h2>
+                        <% if(user.validated=='Verified' ){ %>
+                            <p><b>MY OHI ID: <%= user.OHI_id %></b></p>
+                            <br>
+                            <p><span style="color:green"><b>YOU ARE VERIFIED</b></span></p>
+                            <%}else{ %>
+                                <p><span style="color:red"><b>YOU ARE UNVERIFIED</b></span></p>
+                                <% } %>
+                                    <br>
+                                    <p>Total Referrals: <%=refferalsCount%>
+                                    </p>
+                                    <br><br>
+
+                                    <a href="/voters-details"><button class="btn" type="button">See My Voters
+                                            Details</button></a>
+                                    <br><br>
+                                    <a href="/login-details"><button class="btn" type="button">My Login
+                                            Details</button></a>
+                                    <br><br><br>
+                                    <center><a href="/auth/logout" id="logoutLink" style="text-align: center;">- Click
+                                            to Logout -</a>
+                                    </center>
+                                    <br>
+                    </div>
+
+                </div>
+            </div>
+            <!-- //form -->
+        </div>
+        <!-- copyright-->
+        <div class="copyright text-center">
+            <p class="copy-footer-29">Ohi.com.ng © 2022 - All rights reserved </p>
+        </div>
+        <!-- //copyright-->
+    </section>
+    <!-- //form section start -->
+
+
+    <!-- sweet alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- fetch API for logout page -->
+    <script src="js/logout-fetchAPI.js"></script>
+</body>
+
+</html>
